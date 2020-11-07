@@ -1,6 +1,6 @@
 CC=g++
-CFLAGS= --std=c++11 -I.
-DEPS = timecost.h
+CFLAGS= --std=c++17 -I.. -O1
+DEPS = #timecost.h
 OBJ = test.o 
 
 

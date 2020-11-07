@@ -1,5 +1,5 @@
 #include <iostream>
-#include "timecost.h"
+#include "timecost.hpp"
 
 
 struct Data{

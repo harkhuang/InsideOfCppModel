@@ -12,6 +12,8 @@ public:
     ~Point(){   
     }
 
+
+
 private:
     int x;
     int y;

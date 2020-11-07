@@ -1,8 +1,9 @@
-all:test1   
-CC=g++ 
-CFLAG=-I.
-test1: test1.cpp
-    ${CC} -std=c++11 -O1 test1 test1.cpp  -I.
-	 
- clean: 
-	rm -f *.o test1 
+test: 
+	g++ -std=c++11 -O1 -o test test.cpp timecost.hpp -I.
+
+	g++ -E  test.cpp  -o test1.i
+	g++ -S  test1.i   -o  test1.s
+	g++ -c  test1.s -o test1.o 
+	g++  test1.o -o test1
+ clean:  
+	rm -f *.o  *.s *.i test

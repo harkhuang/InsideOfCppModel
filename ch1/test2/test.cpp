@@ -1,13 +1,21 @@
 #include <iostream>
-#include "timecost.hpp"
+#include "timecost.h"
 
+
+struct Data{
+virtual void func(){};
+
+    int a;
+    int b;
+};
  
 class Point{
 public:
-    Point(){
+    Point(Data data){
         x = 1;
         y = 2;
         z = 3;
+        data_ = data;
     }
     ~Point(){   
     }
@@ -16,16 +24,21 @@ private:
     int x;
     int y;
     int z;
+
+    Data data_;
 };
 
 class Point1{
 public:
-    Point1(int x,int y,int z):x(x),y(y),z(z){ }
+
+    // 初始化参数如果有构造
+    Point1(int x,int y,int z,Data data) : x(x),y(y),z(z),data_(data){ }
     ~Point1(){ }
 private:
     int x;
     int y;
     int z;
+    Data data_;
 };
 
 
@@ -37,10 +50,13 @@ private:
 
 int main()
 {
+
+
+    Data data;
     {
         MyClock tempclock("测试用例1");
         for(int i=0;i<100000;i++){
-            Point a;
+            Point a(data);
         }
     }
 
@@ -49,7 +65,7 @@ int main()
     {
         MyClock tempclock2("测试用例2");
         for(int i=0;i<100000;i++){
-            Point1 a(1,2,3);
+            Point1 a(1,2,3,data);
         }
     }
 

@@ -1,0 +1,8 @@
+# cmake_minimum_required(VERSION 3.9)
+
+
+
+# SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O2")
+SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O3")
+add_executable(test1 test1.cpp)
+add_executable(test2 test2.cpp)
